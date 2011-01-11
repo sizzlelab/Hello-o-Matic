@@ -1,0 +1,18 @@
+<% form_tag(:action => "create") do -%>
+    <fieldset>
+        <legend>Log in</legend>
+        <ol>
+            <li>
+                <label for="username">username</label>
+                <%= text_field_tag :username, nil, :value => session[:form_username], :class => :text %>
+            </li>
+            <li>
+                <label for="password">password</label>
+                <%= password_field_tag :password, nil, :class => :text  %>
+            </li>
+            <li class="buttons">
+                <%= submit_tag "Log in", :class => :submit %> 
+            </li>
+        </ol>
+    </fieldset>
+<% end -%>

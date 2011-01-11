@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Hello-O-Matic</title>
+    <%= stylesheet_link_tag("core") %>
+    <%= stylesheet_link_tag("hello") %>
+  </head>
+  <body>
+    <div id="wrapper">
+        <div id="header">
+            <% if session[:person_id] %>
+                <!-- logged in -->
+                <p class="buttons">
+                    <span class="name">Hello <%= session[:person_name] %>!</span>
+                    <%= link_to :logout, { :controller => :sessions, :action => :destroy }, :class => :small %>
+                </p>
+            <% end %>
+        </div>
+
+        <h1 id="masthead">Hello-O-Matic</h1>
+        
+        <div id="content">
+            <% unless flash[:notice].blank? %>
+                <div class="flash notice"><%= flash[:notice] %></div>
+            <% end %>
+            <% unless flash[:warning].blank? %>
+                <div class="flash warning"><%= flash[:warning] %></div>
+            <% end %>
+            <% unless flash[:error].blank? %>
+                <div class="flash error"><%= flash[:error] %></div>
+            <% end %>
+
+            <%= yield %>
+        </div>
+
+        <div id="footer">
+
+            <p>Hello-O-Matic 2010. Running on the <a href="<%= APP_CONFIG.ASI %>">ASI platform</a>.</p>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<% if session[:person_id] %>
+    <!-- logged in -->
+    <p>
+        Enter a phone number and click the button to send your greeting!
+    </p>
+    <% form_tag(:action => "sendhello") do -%>
+        <fieldset class="light">
+            <ol>
+                <li class="number">
+                    <label for="phone_number">phone number</label>
+                    <%= text_field_tag :phone_number, nil, :value => session[:form_phone_number], :class => :text %>
+                </li>
+                <li class="buttons hello">
+                    <%= submit_tag "Say Hello", :class => "submit" %>
+                </li>
+            </ol>
+        </fieldset>
+    <% end -%>
+<% else %>
+    <!-- not logged in -->
+    <p class="leader">
+        Welcome to Hello-O-Matic!
+    </p>
+    <p class="intro">
+        the easiest and best way to greet people via SMS!
+    </p>
+    <p>
+        If you have an ASI account, click the button to log in below.
+    </p>
+    <p>
+        Otherwise register today to start using Hello-O-Matic!
+    </p>
+    <p class="buttons">
+      <%= link_to "Log in", { :controller => :sessions, :action => :new } %>
+      <%= link_to "Register", { :controller => :people, :action => :register } %>
+    </p>
+<% end %>

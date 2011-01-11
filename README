@@ -1,0 +1,18 @@
+== Welcome to Hello-o-Matic
+
+Hello-o-Matic is an example application written to demonstrate some of the functionality provided by the Aalto Social Interface (ASI - https://github.com/sizzlelab/asi) and to highlight how a developer can interface with ASI through their own Ruby on Rails application.
+
+The basic functionality provided is:
+
+- user can register
+- user can login
+- user can logout
+- user can send an SMS message containing the word "HELLO" to a number of their choice
+
+== Authors
+
+Created by Konrad Markus <konrad.markus@hiit.fi> & Jani Turunen <jani.turunen@hiit.fi> at Helsinki Institute for Information Technology HIIT, 2010 in the OtaSizzle project.
+
+== License
+
+Hello-o-Matic is open source under MIT license. See LICENSE file for details.

@@ -1,0 +1,35 @@
+<% form_tag(:action => "create") do -%>
+  <fieldset>
+    <legend>Register</legend>
+    <ol>
+        <li>
+            <label for="username">username</label>
+            <%= text_field_tag :username, nil, :value => session[:form_username], :class => :text %>
+        </li>
+        <li>
+            <label for="password">password</label>
+            <%= password_field_tag :password, nil, :class => :text %>
+        </li>
+        <li>
+            <label for="password2">password again</label>
+            <%= password_field_tag :password2, nil, :class => :text %>
+        </li>
+        <li>
+            <label for="email">email</label>
+            <%= text_field_tag :email, nil, :value => session[:form_email], :class => :text %>
+        </li>
+        <li>
+            <label for="phone_number">phone number</label>
+            <%= text_field_tag :phone_number, nil, :value => session[:form_phone_number], :class => :text %>
+        </li>
+        <li>
+            <label for="consent">I agree to the <a href="">Terms &amp; Conditions</a></label>
+            <% checked = session[:form_consent] %>
+            <%= check_box_tag :consent, 1, checked, :class => :checkbox %>
+        </li>
+        <li class="buttons">
+            <%= submit_tag "Register", :class => :submit %> 
+        </li>
+    </ol>
+  </fieldset>
+<% end -%>
