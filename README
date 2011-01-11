@@ -5,13 +5,22 @@ Hello-o-Matic is an example application written to demonstrate some of the funct
 The basic functionality provided is:
 
 - user can register
-- user can login
+- user can login using their ASI credentials
 - user can logout
 - user can send an SMS message containing the word "HELLO" to a number of their choice
 
+== Running
+
+To make this into a working Rails application, you should:
+- copy config/config.example.yml to config/config.yml
+- edit config/config.yml replacing the placeholder values with the correct values
+
 == Authors
 
-Created by Konrad Markus <konrad.markus@hiit.fi> & Jani Turunen <jani.turunen@hiit.fi> at Helsinki Institute for Information Technology HIIT, 2010 in the OtaSizzle project.
+Konrad Markus <konrad.markus@hiit.fi> 
+Jani Turunen <jani.turunen@hiit.fi>
+
+At Helsinki Institute for Information Technology HIIT, 2010 for the OtaSizzle project.
 
 == License
 
